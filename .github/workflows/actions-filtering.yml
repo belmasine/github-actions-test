@@ -13,10 +13,10 @@ on:
       - v1.*
     paths:
       - '**.js'
-      - '!filename.js'
+      - '!simple.yml'
     #paths-ignore:
 jobs:
-  job:
+  filter-branch:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
