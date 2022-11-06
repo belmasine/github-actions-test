@@ -2,6 +2,13 @@
 #https://github.com/actions/checkout#usage
 #https://docs.github.com/en/rest/repos/repos#create-a-repository-dispatch-event
 #generate token: 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
+
+#{
+#    "event_type": "build",
+#    "client_payload": {
+#        "env": "production"
+#    }
+#}
 name: Actions Workflow
 #on: [push, pull_request]
 on: 
@@ -14,6 +21,8 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: payload
+        run: echo ${{ github.event.client_payload.env }}
       - name: Simple JS action
         id: greet
         uses: actions/hello-world-javascript-action@v1.1

@@ -1,0 +1,17 @@
+#https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+name: Filtering Actions Workflow
+on:
+  push:
+    branches:
+      - master
+      - 'feature/*'
+      - 'feature/**'
+      - '!feature/featC'
+    #branches-ignore:
+    #  -
+    tags: 
+      - v1.*
+    paths:
+      - '**.js'
+      - '!filename.js'
+    #paths-ignore:    
