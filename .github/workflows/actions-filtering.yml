@@ -3,18 +3,7 @@ name: Filtering Actions Workflow
 on:
   push:
     branches:
-      - master
       - 'feature/*'
-      - 'feature/**'
-      - '!feature/featC'
-    #branches-ignore:
-    #  -
-    tags: 
-      - v1.*
-    paths:
-      - '**.js'
-      - '!simple.yml'
-    #paths-ignore:
 jobs:
   filter-branch:
     runs-on: ubuntu-latest
