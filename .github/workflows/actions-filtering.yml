@@ -3,21 +3,10 @@ name: Filtering Actions Workflow
 on:
   push:
     branches:
-      - master
       - 'feature/*'
-      - 'feature/**'
-      - '!feature/featC'
-    #branches-ignore:
-    #  -
-    tags: 
-      - v1.*
-    paths:
-      - '**.js'
-      - '!filename.js'
-    #paths-ignore:
 jobs:
-  job:
+  filter-branch:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
-        run: echo "Hello World"
+        run: echo "Hello World test"
